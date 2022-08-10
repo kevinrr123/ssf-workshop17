@@ -1,7 +1,6 @@
 ## Currency Converter App
 mvn spring-boot:run
 
-set FIXER_CURRENCY_API_KEY=fpkIV1Ep0PCB7fok8MHnFvKxeEI0MH7x
 
 
 {
