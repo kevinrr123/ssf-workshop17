@@ -17,3 +17,5 @@ mvn spring-boot:run
     "date": "2022-07-29",
     "result": 72.541
 }# ssf-workshop17
+
+https://lit-beyond-61379.herokuapp.com/
