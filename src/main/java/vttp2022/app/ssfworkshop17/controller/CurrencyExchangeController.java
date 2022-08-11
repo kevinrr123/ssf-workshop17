@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,12 +31,13 @@ public class CurrencyExchangeController {
 
     @GetMapping
     public String exchange(@RequestParam(required = true) String to,
-    @RequestParam(required = true) String from, @RequestParam(required = true) String amount, Model model){
+    @RequestParam(required = true) String from, @RequestParam(required = true) String amount, Model model,@ModelAttribute Currency c){
         Query q = new Query();
         q.setTo(to);
         q.setFrom(from);
         q.setAmount(new BigDecimal(amount));
         Currency curry = currySvc.convertExchangeRates(q);
+        model.addAttribute("currency", curry);
         currySvc.save(curry);
         return null;
     }

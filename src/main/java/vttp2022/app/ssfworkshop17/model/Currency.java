@@ -17,10 +17,10 @@ public class Currency {
     private static Logger logger = LoggerFactory.getLogger(Currency.class);
 
     private String success;
-    private String date;
+    //private String date;
     private BigDecimal result;
     private Query query;
-    private BigDecimal amount;
+    //private BigDecimal amount;
     private String id;
     
     public Currency() {
@@ -44,24 +44,24 @@ public class Currency {
         return strBuilder.toString().substring(0, numchars);
     }
 
-    public BigDecimal getAmount() {
-        return amount;
-    }
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
+    // public BigDecimal getAmount() {
+    //     return amount;
+    // }
+    // public void setAmount(BigDecimal amount) {
+    //     this.amount = amount;
+    // }
     public String getSuccess() {
         return success;
     }
     public void setSuccess(String success) {
         this.success = success;
     }
-    public String getDate() {
-        return date;
-    }
-    public void setDate(String date) {
-        this.date = date;
-    }
+    // public String getDate() {
+    //     return date;
+    // }
+    // public void setDate(String date) {
+    //     this.date = date;
+    // }
     public BigDecimal getResult() {
         return result;
     }

@@ -31,8 +31,8 @@ public class ReDisConfig {
     @Value("${spring.redis.port}")
     private Optional<Integer> redisPort;
 
-    //@Value("${spring.redis.password}")
-    //private String redisPassword;
+    @Value("${spring.redis.password}")
+    private String redisPassword;
 
 //     @Bean 
 //     @Scope("singleton")
@@ -68,7 +68,7 @@ public class ReDisConfig {
         final RedisStandaloneConfiguration config = new RedisStandaloneConfiguration();
         config.setHostName(redisHost);
         config.setPort(redisPort.get());
-        //config.setPassword(redisPassword);
+        config.setPassword(redisPassword);
         Jackson2JsonRedisSerializer jackson2JsonJsonSerializer = new Jackson2JsonRedisSerializer(Currency.class);
 
         final JedisClientConfiguration jedisClient = JedisClientConfiguration.builder().build();
